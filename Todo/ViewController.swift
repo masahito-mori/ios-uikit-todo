@@ -30,8 +30,11 @@ class ViewController: UIViewController {
         
         setupLayout()
     }
-    
-    private func setupLayout() {
+}
+
+// MARK: - private
+private extension ViewController {
+    func setupLayout() {
         myTableView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
         myTableView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
         myTableView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
