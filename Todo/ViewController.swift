@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+final class ViewController: UIViewController {
     private var myTableView = UITableView()
     private var todoListAdapter = TodoListAdapter()
     
