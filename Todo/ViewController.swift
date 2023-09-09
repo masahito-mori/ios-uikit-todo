@@ -27,6 +27,7 @@ final class ViewController: UIViewController {
         
         // Viewに追加する.
         view.addSubview(myTableView)
+        view.backgroundColor = .white
         
         setupLayout()
     }
@@ -35,9 +36,9 @@ final class ViewController: UIViewController {
 // MARK: - private
 private extension ViewController {
     func setupLayout() {
-        myTableView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
-        myTableView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
-        myTableView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
-        myTableView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        myTableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
+        myTableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
+        myTableView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor).isActive = true
+        myTableView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor).isActive = true
     }
 }
