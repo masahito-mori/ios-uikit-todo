@@ -18,11 +18,12 @@ extension TodoListAdapter: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        // Fetch a cell of the appropriate type.
-        let cell = tableView.dequeueReusableCell(withIdentifier: "MyCell", for: indexPath)
-
-        // Configure the cell’s contents.
-        cell.textLabel?.text = myItems[indexPath.row]
+        // deque
+        let reusableCell = tableView.dequeueReusableCell(withIdentifier: TodoListCell.cellIdentifier) as? TodoListCell
+        // セルの生成
+        let cell = reusableCell ?? TodoListCell(style: .default, reuseIdentifier: TodoListCell.cellIdentifier)
+        
+        cell.setDetail(name: myItems[indexPath.row])
 
         return cell
     }

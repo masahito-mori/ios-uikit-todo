@@ -12,6 +12,7 @@
 		1B8C2B0F2A90BEDE00F7F2AC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B8C2B0E2A90BEDE00F7F2AC /* ViewController.swift */; };
 		1B8C2B142A90BEDE00F7F2AC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1B8C2B132A90BEDE00F7F2AC /* Assets.xcassets */; };
 		1B8C2B1F2AAC392900F7F2AC /* TodoListAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B8C2B1E2AAC392900F7F2AC /* TodoListAdapter.swift */; };
+		1B8C2B252AAC904500F7F2AC /* TodoListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B8C2B242AAC904500F7F2AC /* TodoListCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		1B8C2B132A90BEDE00F7F2AC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1B8C2B182A90BEDE00F7F2AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1B8C2B1E2AAC392900F7F2AC /* TodoListAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoListAdapter.swift; sourceTree = "<group>"; };
+		1B8C2B242AAC904500F7F2AC /* TodoListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoListCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +60,7 @@
 				1B8C2B0C2A90BEDE00F7F2AC /* SceneDelegate.swift */,
 				1B8C2B0E2A90BEDE00F7F2AC /* ViewController.swift */,
 				1B8C2B1E2AAC392900F7F2AC /* TodoListAdapter.swift */,
+				1B8C2B242AAC904500F7F2AC /* TodoListCell.swift */,
 				1B8C2B132A90BEDE00F7F2AC /* Assets.xcassets */,
 				1B8C2B182A90BEDE00F7F2AC /* Info.plist */,
 			);
@@ -134,6 +137,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1B8C2B0F2A90BEDE00F7F2AC /* ViewController.swift in Sources */,
+				1B8C2B252AAC904500F7F2AC /* TodoListCell.swift in Sources */,
 				1B8C2B0B2A90BEDE00F7F2AC /* AppDelegate.swift in Sources */,
 				1B8C2B0D2A90BEDE00F7F2AC /* SceneDelegate.swift in Sources */,
 				1B8C2B1F2AAC392900F7F2AC /* TodoListAdapter.swift in Sources */,
