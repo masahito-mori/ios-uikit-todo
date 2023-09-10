@@ -16,21 +16,27 @@ final class TodoListCell: UITableViewCell {
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        backgroundColor = .red
-        nameLabel.font = .systemFont(ofSize: 30)
+        nameLabel.font = .systemFont(ofSize: 20)
         nameLabel.textColor = .black
-        self.addSubview(nameLabel)
+        contentView.addSubview(nameLabel)
+        setUpView()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    override func layoutSubviews() {
-        nameLabel.sizeToFit()
-    }
-    
     func setDetail(name: String) {
         nameLabel.text = name
+    }
+    
+    private func setUpView() {
+        nameLabel.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            nameLabel.centerYAnchor.constraint(equalTo: centerYAnchor),
+            nameLabel.leadingAnchor.constraint(equalTo: leadingAnchor),
+            nameLabel.trailingAnchor.constraint(equalTo: trailingAnchor),
+            nameLabel.heightAnchor.constraint(equalToConstant: 50)
+        ])
     }
 }
