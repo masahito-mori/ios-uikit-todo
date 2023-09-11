@@ -11,14 +11,18 @@ final class TodoListCell: UITableViewCell {
     // セルID
     static let cellIdentifier = "todoListCell"
     
-    private let nameLabel = UILabel()
-    private let infoLabel = UILabel()
+    private let titleLabel = UILabel()
+    private let deadlineLabel = UILabel()
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        nameLabel.font = .systemFont(ofSize: 20)
-        nameLabel.textColor = .black
-        contentView.addSubview(nameLabel)
+        titleLabel.font = .systemFont(ofSize: 20)
+        titleLabel.textColor = .black
+        contentView.addSubview(titleLabel)
+        
+        deadlineLabel.font = .systemFont(ofSize: 12)
+        deadlineLabel.textColor = .black
+        contentView.addSubview(deadlineLabel)
         setUpView()
     }
     
@@ -26,17 +30,26 @@ final class TodoListCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func setDetail(name: String) {
-        nameLabel.text = name
+    func setDetail(title: String, deadline: String) {
+        titleLabel.text = title
+        deadlineLabel.text = deadline
     }
     
     private func setUpView() {
-        nameLabel.translatesAutoresizingMaskIntoConstraints = false
+        titleLabel.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            nameLabel.centerYAnchor.constraint(equalTo: centerYAnchor),
-            nameLabel.leadingAnchor.constraint(equalTo: leadingAnchor),
-            nameLabel.trailingAnchor.constraint(equalTo: trailingAnchor),
-            nameLabel.heightAnchor.constraint(equalToConstant: 50)
+            titleLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 8),
+            titleLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 8),
+            titleLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -8),
+            titleLabel.heightAnchor.constraint(equalToConstant: 25)
+        ])
+        
+        deadlineLabel.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            deadlineLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 8),
+            deadlineLabel.leadingAnchor.constraint(equalTo: titleLabel.leadingAnchor),
+            deadlineLabel.trailingAnchor.constraint(equalTo: titleLabel.trailingAnchor),
+            deadlineLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -8)
         ])
     }
 }

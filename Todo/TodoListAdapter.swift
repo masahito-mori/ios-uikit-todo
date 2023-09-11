@@ -9,12 +9,14 @@ import UIKit
 
 final class TodoListAdapter: NSObject {
     // Tableで使用する配列を設定する
-    private let myItems:[String] = ["Todo1", "Todo2", "Todo3"]
+    private let todos = [["title": "swift","deadline": "12/03"],
+                         ["title": "objc" ,"deadline": "07/10"],
+                         ["title": "UIkit","deadline": "05/28"]]
 }
 
 extension TodoListAdapter: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        myItems.count
+        todos.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -23,8 +25,12 @@ extension TodoListAdapter: UITableViewDataSource {
         // セルの生成
         let cell = reusableCell ?? TodoListCell(style: .default, reuseIdentifier: TodoListCell.cellIdentifier)
         
-        cell.setDetail(name: myItems[indexPath.row])
-
+        let todo = todos[indexPath.row]
+        
+        if let title = todo["title"], let deadline = todo["deadline"] {
+            cell.setDetail(title: title, deadline: deadline)
+        }
+        
         return cell
     }
 }
@@ -32,13 +38,12 @@ extension TodoListAdapter: UITableViewDataSource {
 extension TodoListAdapter: UITableViewDelegate {
     // 指定された場所の行に使用する高さをデリゲートに尋ねる
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 50
+        return UITableView.automaticDimension
     }
     
     // 行が選択されていることをdelegateに伝える
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("Row:\(indexPath.section)")
         print("Section: \(indexPath.row)")
-        print("Value: \(myItems[indexPath.row])")
     }
 }
